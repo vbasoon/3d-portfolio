@@ -13,7 +13,7 @@ import  Plane from '../models/Plane';
 
 const Home = () => {
 
-  const [isRotating, setIsRotating] = useState(false);
+  const [isRotating, setIsRotating] = useState(false); //State
 
   const adjustIslandForScreenSize = () => {
     let screenScale = null; 
@@ -33,7 +33,7 @@ const Home = () => {
     let screenScale, screenPosition;
 
     if(window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
+      screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0]
     } else {
       screenScale = [3, 3, 3];
@@ -43,8 +43,9 @@ const Home = () => {
     return [screenScale, screenPosition]
   }
 
-  const [islandScale, islandPosition, islandRotation] = adjustIslandForScreenSize();
-  const [planeScale, planePosition ] = adjustPlaneForScreenSize();
+  const [islandScale, islandPosition, islandRotation] = adjustIslandForScreenSize(); //Виклик функції
+
+  const [planeScale, planePosition ] = adjustPlaneForScreenSize(); //Виклик функції
 
   return (
     <section className="w-full h-screen relative">
