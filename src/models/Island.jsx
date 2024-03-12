@@ -61,7 +61,9 @@ const Island = ({isRotating, seIsRotating, ...props}) => {
     }
   }
 
-  
+  useEffect(() => {
+    
+  })
 
   return (
     <a.group ref={islandRef} {...props}>
