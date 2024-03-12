@@ -77,6 +77,16 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
     }
   }
 
+  useFrame(() => {
+    if(!isRotating) {
+      rotationSpeed.current *= dampingFactor;
+      
+      if(Math.abs(rotationSpeed.current) < 0.0001) {
+        rotationSpeed.current = 0;
+      }
+    }
+  })
+
   useEffect(() => {
     document.addEventListener('pointerdown', handlePointerDown);
     document.addEventListener('pointerdown', handlePointerUp);
