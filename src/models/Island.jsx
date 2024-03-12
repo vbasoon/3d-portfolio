@@ -84,6 +84,8 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
       if(Math.abs(rotationSpeed.current) < 0.0001) {
         rotationSpeed.current = 0;
       }
+
+      islandRef.current.rotation.y += rotationSpeed.current;
     } else {
       const rotation = islandRef.current.rotation.y;
 
@@ -113,16 +115,16 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
 
   useEffect(() => {
     const canvas = gl.domElement;
-    document.addEventListener('pointerdown', handlePointerDown);
-    document.addEventListener('pointerdown', handlePointerUp);
-    document.addEventListener('pointerdown', handlePointerMove);
+    canvas.addEventListener('pointerdown', handlePointerDown);
+    canvas.addEventListener('pointerdown', handlePointerUp);
+    canvas.addEventListener('pointerdown', handlePointerMove);
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('keyup', handleKeyUp);
 
     return () => {
-      document.addEventListener('pointerdown', handlePointerDown);
-      document.addEventListener('pointerdown', handlePointerUp);
-      document.addEventListener('pointerdown', handlePointerMove);
+      canvas.addEventListener('pointerdown', handlePointerDown);
+      canvas.addEventListener('pointerdown', handlePointerUp);
+      canvas.addEventListener('pointerdown', handlePointerMove);
       document.addEventListener('keydown', handleKeyDown);
       document.addEventListener('keyup', handleKeyUp);
     }
