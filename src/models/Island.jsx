@@ -81,11 +81,15 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
     document.addEventListener('pointerdown', handlePointerDown);
     document.addEventListener('pointerdown', handlePointerUp);
     document.addEventListener('pointerdown', handlePointerMove);
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keyup', handleKeyUp);
 
     return () => {
       document.addEventListener('pointerdown', handlePointerDown);
       document.addEventListener('pointerdown', handlePointerUp);
       document.addEventListener('pointerdown', handlePointerMove);
+      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('keyup', handleKeyUp);
     }
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove])
 
