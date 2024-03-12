@@ -49,7 +49,6 @@ const Home = () => {
 
   return (
     <section className="w-full h-screen relative">
-      Home
       <Canvas 
         className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
         camera={{ near: 0.1, far: 1000}}
