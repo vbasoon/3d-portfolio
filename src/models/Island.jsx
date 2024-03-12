@@ -112,6 +112,7 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
   })  
 
   useEffect(() => {
+    const canvas = gl.domElement;
     document.addEventListener('pointerdown', handlePointerDown);
     document.addEventListener('pointerdown', handlePointerUp);
     document.addEventListener('pointerdown', handlePointerMove);
