@@ -1,4 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
+const InfoBox = ({text, link, btnText}) => (
+  <div className='info-box'> 
+    {text}
+    <Link to={link}>
+    {btnText}
+    </Link>
+  </div>
+)
 
 const renderContent = {
   1: (
@@ -17,12 +27,6 @@ const renderContent = {
     <h1>4</h1>
   ),
 }
-
-const InfoBox = ({text, link, btnText}) => (
-  <div className='info-box'> 
-    {text}
-  </div>
-)
 
 const HomeInfo = ({currentStage}) => {
   return renderContent[currentStage] || null;
