@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import {arrow} from '../assets/icons'
+
 const InfoBox = ({text, link, btnText}) => (
-  <div className='info-box'> 
-    {text}
-    <Link to={link}>
+  <div className='info-box'>
+    <p className='font-medium sm:text-xl text-center'>{text}</p> 
+    
+    <Link to={link} className='neo-brutalism-white neo-btn'>
     {btnText}
+    <img src={arrow} />
     </Link>
   </div>
 )
@@ -18,7 +22,11 @@ const renderContent = {
     </h1>
   ),
   2: (
-    <h1>2</h1>
+    <InfoBox
+      text ="I am currently working as a Software Engineer and picked up many hard & soft skills along the way"
+      link="/about"
+      btnText="Learn more"
+    />
   ),
   3: (
     <h1>3</h1>
