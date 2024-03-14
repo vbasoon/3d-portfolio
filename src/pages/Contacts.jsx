@@ -1,6 +1,10 @@
-import React from 'react'
+import React,  {useState} from 'react'
 
 const Contacts = () => {
+  const [form, setForm] = useState({name: '', email: '', message: ''})
+
+  const handleChange = () => {}
+
   return (
    <section className="relative flex lg:flex-row flex-col max-container">
     <div className='flex-1 min-w-[50%] flex flex-col'>
@@ -15,7 +19,8 @@ const Contacts = () => {
           className="input"
           placeholder='Enter your name'
           required
-          //value={} 
+          value={form.name}
+          onChange={handleChange} 
         />
       </form>
     </div>
