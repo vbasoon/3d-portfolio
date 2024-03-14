@@ -1,6 +1,7 @@
 import React,  {useState} from 'react'
 
 const Contacts = () => {
+  const formRef = useRef(null);
   const [form, setForm] = useState({name: '', email: '', message: ''})
   const [isLoading, setIsLoading] = useState(false)
 
