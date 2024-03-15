@@ -4,12 +4,15 @@ import emailjs from '@emailjs/browser'
 
 import Fox from '../models/Fox.jsx'
 import Loader from '../components/Loader.jsx'
+import useAlert from '../hooks/useAlert.js'
 
 const Contacts = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({name: '', email: '', message: ''})
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState('idle');
+
+  const { alert, showAlert, hideAlert } = useAlert();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -32,10 +35,10 @@ const Contacts = () => {
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
     ).then(()=>{
       setIsLoading(false);
-      // TODO: Show success message
-      // TODO: Hide an alert
-
+      showAlert({ show: true, text: 'Message sent successfully!', type: 'success' })
+      
       setTimeout(() => {
+        hideAlert()
         setCurrentAnimation('idle')
         setForm({name: '', email: '', message: ''});
       }, [3000])
@@ -44,7 +47,7 @@ const Contacts = () => {
     }).catch((error) => {
       setIsLoading(false);
       console.log(error);
-      // TODO: Show error message
+      showAlert({ show: true, text: "I didn't receive your message", type: 'danger'})
     })
   }
   const handleFocus = () => setCurrentAnimation('walk');
@@ -52,6 +55,7 @@ const Contacts = () => {
 
   return (
    <section className="relative flex lg:flex-row flex-col max-container">
+    {alert.show && <Alert {...alert}/>}
     <div className='flex-1 min-w-[50%] flex flex-col'>
       <h1 className='head-text'>Get in Touch</h1>
       <form 
