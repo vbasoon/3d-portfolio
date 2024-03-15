@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser'
 import Fox from '../models/Fox.jsx'
 import Loader from '../components/Loader.jsx'
 import useAlert from '../hooks/useAlert.js'
+import Alert from '../components/Alert.jsx'
 
 const Contacts = () => {
   const formRef = useRef(null);
@@ -56,6 +57,8 @@ const Contacts = () => {
   return (
    <section className="relative flex lg:flex-row flex-col max-container">
     {alert.show && <Alert {...alert}/>}
+    <Alert {...alert}/>
+
     <div className='flex-1 min-w-[50%] flex flex-col'>
       <h1 className='head-text'>Get in Touch</h1>
       <form 
