@@ -8,7 +8,7 @@ import Bird from '../models/Bird';
 import  Plane from '../models/Plane';
 import HomeInfo from '../components/HomeInfo';
 
-{/*  */}
+import sakura from '../assets/sakura.mp3'
 
 const Home = () => {
 
