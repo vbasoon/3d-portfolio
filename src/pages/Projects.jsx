@@ -4,10 +4,10 @@ const Projects = () => {
   return (
     <section className="max-container">
       <h1 className="head-text">
-        Hello, I'm <span className='blue-gradient_text font-semibold drop-shadow'>Vlad</span>
+        My<span className='blue-gradient_text font-semibold drop-shadow'>Projects</span>
       </h1>
       <div className="mt-5 flex flex-col gap-3 text-slate-500">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic ratione vero est, delectus rerum doloribus nostrum suscipit fugiat commodi iusto?</p>
+        <p>I've embarked on numerous projects throughout the years, but these are the ones I hold closest to my heart. Many of them are open-source, so if you come across something that piques your interest, feel free to explore the codebase and contribute your ideas for futher enhancements. Your collaboration is highly valued! </p>
       </div>
     </section>
   )
